@@ -14,5 +14,5 @@ fn main() {
 
 #[tauri::command]
 fn hello_tauri() -> String {
-    "Hello Tauri 1.0".into()
+    "Hello Tauri 1.0 ＼(^o^)／".into()
 }
