@@ -9,11 +9,11 @@ function App() {
 
   const [hello, setHello] = useState("");
   useEffect(() => {
-    async function setter() {
+    async function set() {
       const hello = await invoke("hello_tauri");
       setHello(typeof hello === "string" ? hello : "");
     }
-    setter();
+    set();
   }, []);
 
   return (
