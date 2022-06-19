@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { useState, useEffect } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-import { invoke } from "@tauri-apps/api";
+import { invoke } from '@tauri-apps/api'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
-  const [hello, setHello] = useState("");
+  const [hello, setHello] = useState('')
   useEffect(() => {
     async function set() {
-      const hello = await invoke("hello_tauri");
-      setHello(typeof hello === "string" ? hello : "");
+      const hello = await invoke('hello_tauri')
+      setHello(hello as string)
     }
-    set();
-  }, []);
+    set()
+  }, [])
 
   return (
     <div className="App">
@@ -39,7 +39,7 @@ function App() {
           >
             Learn React
           </a>
-          {" | "}
+          {' | '}
           <a
             className="App-link"
             href="https://vitejs.dev/guide/features.html"
@@ -51,7 +51,7 @@ function App() {
         </p>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
